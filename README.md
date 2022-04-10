@@ -8,7 +8,6 @@ Receipt parser using google vision and spacy that uploads results to google shee
 3. Create a google cloud service account with both the sheets api and google vision api enabled
 4. Save a service account key (json) and record the path on the environment variable `GOOGLE_APPLICATION_CREDENTIALS`
 5. Install [just](https://github.com/casey/just) 
-6. run `just create-directories`
 
 
 ## Usage
