@@ -1,2 +1,2 @@
-parse-reciepts
-  python3 ./parse_reciepts.py
+parse-receipts:
+  python3 ./parse_receipts.py
