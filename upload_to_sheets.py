@@ -1,14 +1,9 @@
 from googleapiclient.discovery import build
-from google_auth_oauthlib.flow import InstalledAppFlow
-import pickle
 import os
-from google.auth.transport.requests import Request
 from google.oauth2 import service_account
 
-spreadsheet_id = "1Tlm0Wa0H-zfjs1Q0YPc2hJUaidA9maDgsK8E_quzGGM"
+SPREADSHEET_ID = "1Tlm0Wa0H-zfjs1Q0YPc2hJUaidA9maDgsK8E_quzGGM"
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
-oauth_token_path = "../Downloads/client_secret_339936403154-d4igrfc42tefqoi6usscasv1t9jj2fjr.apps.googleusercontent.com.json"
-creds = None
 
 
 def create_unique_sheet(service, sheet_name: str, *, depth: int = 0) -> str:
@@ -16,7 +11,7 @@ def create_unique_sheet(service, sheet_name: str, *, depth: int = 0) -> str:
         "requests": [{"addSheet": {"properties": {"title": sheet_name}}}]
     }
     request = service.spreadsheets().batchUpdate(
-        spreadsheetId=spreadsheet_id, body=batch_update_values_request_body
+        spreadsheetId=SPREADSHEET_ID, body=batch_update_values_request_body
     )
     try:
         request.execute()
@@ -44,7 +39,7 @@ def add_reciept_to_sheet(sheet_name: str, receipt: "Receipt"):
     sheet = service.spreadsheets()
 
     sheet.values().update(
-        spreadsheetId=spreadsheet_id,
+        spreadsheetId=SPREADSHEET_ID,
         range=spreadsheet_range,
         body={"values": receipt.formatted_sheet},
         valueInputOption="USER_ENTERED",

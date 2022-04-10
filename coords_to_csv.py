@@ -12,7 +12,6 @@ import spacy
 from stopwords import STOPWORDS
 import functools
 from dateutil.parser import parse
-import datetime
 
 PARSED_IMAGE_JSON_DIR = "./parsed_image_jsons"
 
