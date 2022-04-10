@@ -29,7 +29,7 @@ To create a new environment:
 - `python3 -m venv env`
 - `source env/bin/activate`
 
-To restore an environment (after environment has been sourced):
+To install requirements for this project (after environment has been sourced):
 - `pip install -r ./requirements.txt`
 
 
