@@ -19,3 +19,6 @@ run `just parse-receipts` to parse all pdf receipts currently present in `scanne
 
 1.  share that sheet with the configured service account
 2.  set the variable `SPREADSHEET_ID` in `./upload_to_sheets.py` to the id of this sheet
+
+## Credits
+Thanks to @lutzkuen for providing inspiration that was foundational for this project (https://github.com/lutzkuen/receipt-parser).
