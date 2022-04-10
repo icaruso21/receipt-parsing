@@ -344,8 +344,11 @@ class Receipt:
         return lines
 
     def upload_receipt_to_gsheet(self):
-        sheet_name = os.path.splitext(os.path.basename(self.image_filepath))[0]
-        print(sheet_name)
+        sheet_name = (
+            self.name
+            if self.name is not None
+            else os.path.splitext(os.path.basename(self.image_filepath))[0]
+        )
         add_reciept_to_sheet(sheet_name, self)
 
 
