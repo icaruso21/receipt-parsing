@@ -1,6 +1,6 @@
 # receipt-parsing
 
-A python project that parses receipts using google vision and uploads the interpreted information to google sheets.
+Receipt parser using google vision and spacy that uploads results to google sheets.
 
 ## Installation
 
